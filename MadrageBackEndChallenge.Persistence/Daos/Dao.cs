@@ -1,4 +1,4 @@
-namespace MadrageBackEndChallenge.Persistence
+namespace MadrageBackEndChallenge.Persistence.Daos
 {
     internal abstract class Dao<T> : IDao<T>
     {

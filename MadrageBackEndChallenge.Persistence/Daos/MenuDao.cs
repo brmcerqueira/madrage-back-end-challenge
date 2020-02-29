@@ -1,6 +1,6 @@
 using MadrageBackEndChallenge.Domain;
 
-namespace MadrageBackEndChallenge.Persistence
+namespace MadrageBackEndChallenge.Persistence.Daos
 {
     internal class MenuDao : Dao<Menu>
     {

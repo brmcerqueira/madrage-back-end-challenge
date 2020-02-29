@@ -1,4 +1,4 @@
-namespace MadrageBackEndChallenge.Persistence
+namespace MadrageBackEndChallenge.Persistence.Daos
 {
     public interface IDao<T>
     {
