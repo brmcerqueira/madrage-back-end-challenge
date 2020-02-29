@@ -4,14 +4,14 @@
     "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj": {}
   },
   "projects": {
-    "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj": {
+    "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj",
-        "projectName": "MadrageBackEndChallenge.Persistence",
-        "projectPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj",
+        "projectUniqueName": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj",
+        "projectName": "MadrageBackEndChallenge.Domain",
+        "projectPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj",
         "packagesPath": "/home/bruno/.nuget/packages/",
-        "outputPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/obj/",
+        "outputPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bruno/.nuget/NuGet/NuGet.Config"
@@ -35,10 +35,78 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj",
+        "projectName": "MadrageBackEndChallenge.Persistence",
+        "projectPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj",
+        "packagesPath": "/home/bruno/.nuget/packages/",
+        "outputPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/bruno/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj": {
+                "projectPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
             "LightInject": {
               "target": "Package",
               "version": "[6.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
             }
           },
           "imports": [

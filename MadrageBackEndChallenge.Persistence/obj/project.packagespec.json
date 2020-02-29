@@ -14,7 +14,11 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
-        "projectReferences": {}
+        "projectReferences": {
+          "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj": {
+            "projectPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Domain/MadrageBackEndChallenge.Domain.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -26,9 +30,17 @@
   "frameworks": {
     "netcoreapp3.0": {
       "dependencies": {
+        "EntityFramework": {
+          "target": "Package",
+          "version": "[6.4.0, )"
+        },
         "LightInject": {
           "target": "Package",
           "version": "[6.3.0, )"
+        },
+        "Microsoft.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[3.1.2, )"
         }
       },
       "imports": [

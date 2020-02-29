@@ -1,4 +1,5 @@
 ﻿using LightInject;
+using MadrageBackEndChallenge.Domain;
 
 namespace MadrageBackEndChallenge.Persistence
 {
@@ -6,7 +7,8 @@ namespace MadrageBackEndChallenge.Persistence
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            
+            serviceRegistry.Register<IDao<User>, UserDao>();
+            serviceRegistry.Register<IDao<Menu>, MenuDao>();
         }
     }
 }
