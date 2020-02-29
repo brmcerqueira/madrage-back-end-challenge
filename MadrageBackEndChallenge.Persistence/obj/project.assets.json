@@ -1,0 +1,176 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "LightInject/6.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/LightInject.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/LightInject.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LightInject/6.3.0": {
+      "sha512": "Z6OeBI3ZavkZ+KzQjDrPmW6b/3xqD/dRwxbHEuT9Z133sKH9HyRKy6+oZxVUpZUhD26Vv6VUpfHbWIrptUqi6Q==",
+      "type": "package",
+      "path": "lightinject/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/LightInject.dll",
+        "lib/net452/LightInject.pdb",
+        "lib/net452/LightInject.xml",
+        "lib/net46/LightInject.dll",
+        "lib/net46/LightInject.pdb",
+        "lib/net46/LightInject.xml",
+        "lib/netcoreapp2.0/LightInject.dll",
+        "lib/netcoreapp2.0/LightInject.pdb",
+        "lib/netcoreapp2.0/LightInject.xml",
+        "lib/netstandard1.1/LightInject.dll",
+        "lib/netstandard1.1/LightInject.pdb",
+        "lib/netstandard1.1/LightInject.xml",
+        "lib/netstandard1.3/LightInject.dll",
+        "lib/netstandard1.3/LightInject.pdb",
+        "lib/netstandard1.3/LightInject.xml",
+        "lib/netstandard1.6/LightInject.dll",
+        "lib/netstandard1.6/LightInject.pdb",
+        "lib/netstandard1.6/LightInject.xml",
+        "lib/netstandard2.0/LightInject.dll",
+        "lib/netstandard2.0/LightInject.pdb",
+        "lib/netstandard2.0/LightInject.xml",
+        "lightinject.6.3.0.nupkg.sha512",
+        "lightinject.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.0": [
+      "LightInject >= 6.3.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/bruno/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj",
+      "projectName": "MadrageBackEndChallenge.Persistence",
+      "projectPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/MadrageBackEndChallenge.Persistence.csproj",
+      "packagesPath": "/home/bruno/.nuget/packages/",
+      "outputPath": "/home/bruno/RiderProjects/madrage-back-end-challenge/MadrageBackEndChallenge.Persistence/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/bruno/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "dependencies": {
+          "LightInject": {
+            "target": "Package",
+            "version": "[6.3.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.102/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
