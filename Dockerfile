@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
 WORKDIR /app
 
 COPY MadrageBackEndChallenge/*.csproj ./MadrageBackEndChallenge/
@@ -18,7 +18,7 @@ COPY ./MadrageBackEndChallenge.Persistence/ ./MadrageBackEndChallenge.Persistenc
 WORKDIR ./MadrageBackEndChallenge
 RUN dotnet publish -c Release -o ../out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]

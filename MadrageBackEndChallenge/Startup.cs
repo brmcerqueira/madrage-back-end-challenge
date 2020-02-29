@@ -60,7 +60,7 @@ namespace MadrageBackEndChallenge.Web
 
             services.AddDbContext<DaoContext>(options =>
             {
-                options.UseSqlServer(_customConfig.GetValue<string>("ConnectionString"));
+                options.UseNpgsql(_customConfig.GetValue<string>("ConnectionString"));
             });
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
