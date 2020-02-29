@@ -1,27 +1,30 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Authentication;
 using System.Security.Claims;
 using System.Security.Principal;
 using BCrypt;
 using MadrageBackEndChallenge.Business.Dtos;
 using MadrageBackEndChallenge.Business.Validators;
+using MadrageBackEndChallenge.Domain;
+using MadrageBackEndChallenge.Domain.Exceptions;
 using MadrageBackEndChallenge.Persistence.Daos;
 using Microsoft.IdentityModel.Tokens;
 
 namespace MadrageBackEndChallenge.Business
 {
-    public class UserService
+    internal class UserService : IUserService
     {
         private readonly SigningCredentials _signingCredentials;
         private readonly IUserDao _dao;
         private readonly SignInDtoValidator _signInDtoValidator;
+        private readonly UserSaveDtoValidator _userSaveDtoValidator;
 
         public UserService(SigningCredentials signingCredentials, IUserDao dao)
         {
             _signingCredentials = signingCredentials;
             _dao = dao;
             _signInDtoValidator = new SignInDtoValidator();
+            _userSaveDtoValidator = new UserSaveDtoValidator();
         }
         
         public string SignIn(ISignInDto dto)
@@ -53,6 +56,34 @@ namespace MadrageBackEndChallenge.Business
                 NotBefore = now,
                 Expires = now + TimeSpan.FromDays(3)
             }));
+        }
+        
+        public void Save(IUserSaveDto dto)
+        {
+            _userSaveDtoValidator.Check(dto);
+            
+            if (dto.Id != null)
+            {
+                _dao.Update(new User
+                {
+                    Id = dto.Id.Value,
+                    Name = dto.Name
+                });  
+            }
+            else
+            {
+                if (_dao.HasEmail(dto.Email))
+                {
+                    throw new EmailAlreadyExistsException();
+                }
+                
+                _dao.Create(new User
+                {
+                    Name = dto.Name,
+                    Email = dto.Email,
+                    Password = BCryptHelper.HashPassword(dto.Password, BCryptHelper.GenerateSalt())
+                });  
+            }
         }
     }
 }

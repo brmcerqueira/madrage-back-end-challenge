@@ -1,4 +1,5 @@
-﻿using LightInject;
+﻿using FluentValidation.Resources;
+using LightInject;
 
 namespace MadrageBackEndChallenge.Business
 {
@@ -6,7 +7,8 @@ namespace MadrageBackEndChallenge.Business
     {
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            
+            serviceRegistry.Register<ILanguageManager, ValidationLanguageManager>();
+            serviceRegistry.Register<IUserService, UserService>();
         }
     }
 }

@@ -12,7 +12,12 @@ namespace MadrageBackEndChallenge.Persistence.Daos
 
         public User GetUserByEmail(string email)
         {
-            return context.Set<User>().SingleOrDefault(e => e.Email == email);
+            return Context.Set<User>().SingleOrDefault(e => e.Email == email);
+        }
+
+        public bool HasEmail(string email)
+        {
+            return Context.Set<User>().Any(e => e.Email == email);
         }
     }
 }

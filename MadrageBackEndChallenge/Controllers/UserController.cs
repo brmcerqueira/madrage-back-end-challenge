@@ -1,5 +1,6 @@
+using MadrageBackEndChallenge.Business;
+using MadrageBackEndChallenge.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace MadrageBackEndChallenge.Web.Controllers
 {
@@ -7,11 +8,23 @@ namespace MadrageBackEndChallenge.Web.Controllers
     [Route("/user")]
     public class UserController : ControllerBase
     {
-        private readonly ILogger<UserController> _logger;
+        private readonly IUserService _service;
 
-        public UserController(ILogger<UserController> logger)
+        public UserController(IUserService service)
         {
-            _logger = logger;
+            _service = service;
+        }
+        
+        [HttpPost("signIn")]
+        public string SignIn(SignInModel model)
+        {
+            return _service.SignIn(model);
+        }
+        
+        [HttpPost]
+        public void Save(UserSaveModel model)
+        {
+            _service.Save(model);
         }
     }
 }

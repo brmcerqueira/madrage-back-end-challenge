@@ -107,6 +107,8 @@ namespace MadrageBackEndChallenge.Web
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            _container.AdjustValidationLanguageManager();
         }
     }
 }

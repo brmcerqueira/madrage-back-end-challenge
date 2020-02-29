@@ -2,23 +2,23 @@ namespace MadrageBackEndChallenge.Persistence.Daos
 {
     internal abstract class Dao<T> : IDao<T>
     {
-        protected readonly DaoContext context;
+        protected DaoContext Context { get; }
 
         protected Dao(DaoContext context)
         {
-            this.context = context;
+            Context = context;
         }
         
         public void Create(T entity)
         {
-            context.Add(entity);
-            context.SaveChanges();
+            Context.Add(entity);
+            Context.SaveChanges();
         }
         
         public void Update(T entity)
         {
-            context.Update(entity);
-            context.SaveChanges();
+            Context.Update(entity);
+            Context.SaveChanges();
         }
     }
 }
