@@ -1,5 +1,6 @@
 using System.Linq;
 using MadrageBackEndChallenge.Domain;
+using MadrageBackEndChallenge.Domain.Exceptions;
 
 namespace MadrageBackEndChallenge.Persistence.Daos
 {
@@ -49,7 +50,13 @@ namespace MadrageBackEndChallenge.Persistence.Daos
 
         public void Delete(int id)
         {
-            Context.Remove(Get(id));
+            var entity = Get(id);
+            if (entity == null) 
+            {
+                throw new DeleteException();
+            }
+            Context.Remove(entity);
+            Context.SaveChanges();
         }
     }
 }

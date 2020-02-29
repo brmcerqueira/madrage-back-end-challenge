@@ -15,7 +15,7 @@ namespace MadrageBackEndChallenge.Web.Resources {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Shared {
+    public class Shared {
         
         private static System.Resources.ResourceManager resourceMan;
         
@@ -26,7 +26,7 @@ namespace MadrageBackEndChallenge.Web.Resources {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Resources.ResourceManager ResourceManager {
+        public static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
                     System.Resources.ResourceManager temp = new System.Resources.ResourceManager("MadrageBackEndChallenge.Web.Resources.Shared", typeof(Shared).Assembly);
@@ -37,7 +37,7 @@ namespace MadrageBackEndChallenge.Web.Resources {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Globalization.CultureInfo Culture {
+        public static System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -46,175 +46,181 @@ namespace MadrageBackEndChallenge.Web.Resources {
             }
         }
         
-        internal static string EmailAlreadyExistsException {
+        public static string EmailAlreadyExistsException {
             get {
                 return ResourceManager.GetString("EmailAlreadyExistsException", resourceCulture);
             }
         }
         
-        internal static string MaximumLengthValidator {
+        public static string MaximumLengthValidator {
             get {
                 return ResourceManager.GetString("MaximumLengthValidator", resourceCulture);
             }
         }
         
-        internal static string MinimumLengthValidator {
+        public static string MinimumLengthValidator {
             get {
                 return ResourceManager.GetString("MinimumLengthValidator", resourceCulture);
             }
         }
         
-        internal static string AsyncPredicateValidator {
+        public static string AsyncPredicateValidator {
             get {
                 return ResourceManager.GetString("AsyncPredicateValidator", resourceCulture);
             }
         }
         
-        internal static string CreditCardValidator {
+        public static string CreditCardValidator {
             get {
                 return ResourceManager.GetString("CreditCardValidator", resourceCulture);
             }
         }
         
-        internal static string EmailValidator {
+        public static string EmailValidator {
             get {
                 return ResourceManager.GetString("EmailValidator", resourceCulture);
             }
         }
         
-        internal static string EmptyValidator {
+        public static string EmptyValidator {
             get {
                 return ResourceManager.GetString("EmptyValidator", resourceCulture);
             }
         }
         
-        internal static string EnumValidator {
+        public static string EnumValidator {
             get {
                 return ResourceManager.GetString("EnumValidator", resourceCulture);
             }
         }
         
-        internal static string EqualValidator {
+        public static string EqualValidator {
             get {
                 return ResourceManager.GetString("EqualValidator", resourceCulture);
             }
         }
         
-        internal static string ExactLengthValidator {
+        public static string ExactLengthValidator {
             get {
                 return ResourceManager.GetString("ExactLengthValidator", resourceCulture);
             }
         }
         
-        internal static string ExclusiveBetweenValidator {
+        public static string ExclusiveBetweenValidator {
             get {
                 return ResourceManager.GetString("ExclusiveBetweenValidator", resourceCulture);
             }
         }
         
-        internal static string GreaterThanOrEqualValidator {
+        public static string GreaterThanOrEqualValidator {
             get {
                 return ResourceManager.GetString("GreaterThanOrEqualValidator", resourceCulture);
             }
         }
         
-        internal static string GreaterThanValidator {
+        public static string GreaterThanValidator {
             get {
                 return ResourceManager.GetString("GreaterThanValidator", resourceCulture);
             }
         }
         
-        internal static string InclusiveBetweenValidator {
+        public static string InclusiveBetweenValidator {
             get {
                 return ResourceManager.GetString("InclusiveBetweenValidator", resourceCulture);
             }
         }
         
-        internal static string LengthValidator {
+        public static string LengthValidator {
             get {
                 return ResourceManager.GetString("LengthValidator", resourceCulture);
             }
         }
         
-        internal static string LessThanOrEqualValidator {
+        public static string LessThanOrEqualValidator {
             get {
                 return ResourceManager.GetString("LessThanOrEqualValidator", resourceCulture);
             }
         }
         
-        internal static string LessThanValidator {
+        public static string LessThanValidator {
             get {
                 return ResourceManager.GetString("LessThanValidator", resourceCulture);
             }
         }
         
-        internal static string NotEmptyValidator {
+        public static string NotEmptyValidator {
             get {
                 return ResourceManager.GetString("NotEmptyValidator", resourceCulture);
             }
         }
         
-        internal static string NotEqualValidator {
+        public static string NotEqualValidator {
             get {
                 return ResourceManager.GetString("NotEqualValidator", resourceCulture);
             }
         }
         
-        internal static string NotNullValidator {
+        public static string NotNullValidator {
             get {
                 return ResourceManager.GetString("NotNullValidator", resourceCulture);
             }
         }
         
-        internal static string NullValidator {
+        public static string NullValidator {
             get {
                 return ResourceManager.GetString("NullValidator", resourceCulture);
             }
         }
         
-        internal static string Password {
+        public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
-        internal static string PredicateValidator {
+        public static string PredicateValidator {
             get {
                 return ResourceManager.GetString("PredicateValidator", resourceCulture);
             }
         }
         
-        internal static string RegularExpressionValidator {
+        public static string RegularExpressionValidator {
             get {
                 return ResourceManager.GetString("RegularExpressionValidator", resourceCulture);
             }
         }
         
-        internal static string ScalePrecisionValidator {
+        public static string ScalePrecisionValidator {
             get {
                 return ResourceManager.GetString("ScalePrecisionValidator", resourceCulture);
             }
         }
         
-        internal static string ValidationException {
+        public static string ValidationException {
             get {
                 return ResourceManager.GetString("ValidationException", resourceCulture);
             }
         }
         
-        internal static string AuthenticationException {
+        public static string AuthenticationException {
             get {
                 return ResourceManager.GetString("AuthenticationException", resourceCulture);
             }
         }
         
-        internal static string Email {
+        public static string DeleteException {
+            get {
+                return ResourceManager.GetString("DeleteException", resourceCulture);
+            }
+        }
+        
+        public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
-        internal static string SystemUnavailable {
+        public static string SystemUnavailable {
             get {
                 return ResourceManager.GetString("SystemUnavailable", resourceCulture);
             }
