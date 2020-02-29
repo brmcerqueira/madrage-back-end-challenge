@@ -8,12 +8,12 @@ using Microsoft.Extensions.Logging;
 namespace MadrageBackEndChallenge.Web.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Route("/")]
+    public class MainController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<MainController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public MainController(ILogger<MainController> logger)
         {
             _logger = logger;
         }
