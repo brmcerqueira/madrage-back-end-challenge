@@ -1,5 +1,6 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using BCrypt;
@@ -58,6 +59,17 @@ namespace MadrageBackEndChallenge.Business
             }));
         }
         
+        public object[] All(int? index, int? limit)
+        {
+            // ReSharper disable once CoVariantArrayConversion
+            return _dao.All(index, limit).Select(e => new
+            {
+                e.Id,
+                e.Name,
+                e.Email
+            }).ToArray();
+        }
+        
         public void Save(IUserSaveDto dto)
         {
             _userSaveDtoValidator.Check(dto);
@@ -82,6 +94,11 @@ namespace MadrageBackEndChallenge.Business
                     Password = BCryptHelper.HashPassword(dto.Password, BCryptHelper.GenerateSalt())
                 });  
             }
+        }
+
+        public void Delete(int id)
+        {
+            _dao.Delete(id);
         }
     }
 }

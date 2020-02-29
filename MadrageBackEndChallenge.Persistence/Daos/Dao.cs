@@ -13,6 +13,23 @@ namespace MadrageBackEndChallenge.Persistence.Daos
             Context = context;
         }
 
+        public IQueryable<T> All(int? index, int? limit)
+        {
+            IQueryable<T> query = Context.Set<T>();
+
+            if (index.HasValue)
+            {
+                query = query.Skip(index.Value);
+            }
+            
+            if (limit.HasValue)
+            {
+                query = query.Take(limit.Value);
+            }
+            
+            return query;
+        }
+
         public T Get(int id)
         {
             return Context.Set<T>().SingleOrDefault(e => e.Id == id);
@@ -28,6 +45,11 @@ namespace MadrageBackEndChallenge.Persistence.Daos
         {
             Context.Update(entity);
             Context.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            Context.Remove(Get(id));
         }
     }
 }

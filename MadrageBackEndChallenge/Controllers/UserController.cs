@@ -21,10 +21,22 @@ namespace MadrageBackEndChallenge.Web.Controllers
             return _service.SignIn(model);
         }
         
+        [HttpGet]
+        public object[] All(int? index, int? limit)
+        {
+            return _service.All(index, limit);
+        }
+        
         [HttpPost]
         public void Save(UserSaveModel model)
         {
             _service.Save(model);
+        }
+        
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            _service.Delete(id);
         }
     }
 }
