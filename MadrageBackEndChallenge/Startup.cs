@@ -84,9 +84,9 @@ namespace MadrageBackEndChallenge.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            _configuration = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).Build();
+            var extension = string.IsNullOrEmpty(env.EnvironmentName) ? string.Empty : $".{env.EnvironmentName}";
+            _configuration = new ConfigurationBuilder().SetBasePath(env.ContentRootPath)
+                .AddJsonFile($"appsettings{extension}.json", optional: true, reloadOnChange: true).Build();
 
             _customConfig = _configuration.GetSection("CustomConfig");
             
