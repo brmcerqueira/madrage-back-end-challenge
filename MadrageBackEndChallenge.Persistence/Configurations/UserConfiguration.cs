@@ -8,8 +8,12 @@ namespace MadrageBackEndChallenge.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
+            builder.ToTable("users");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Id).HasColumnName("id").IsRequired();
+            builder.Property(x => x.Name).HasColumnName("name").IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Email).HasColumnName("email").IsRequired().HasMaxLength(30);
+            builder.Property(x => x.Password).HasColumnName("password").IsRequired().HasMaxLength(60);
             builder.HasMany(x => x.Menus);
         }
     }
