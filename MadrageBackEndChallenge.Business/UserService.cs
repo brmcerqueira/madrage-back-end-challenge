@@ -64,11 +64,9 @@ namespace MadrageBackEndChallenge.Business
             
             if (dto.Id != null)
             {
-                _dao.Update(new User
-                {
-                    Id = dto.Id.Value,
-                    Name = dto.Name
-                });  
+                var user = _dao.Get(dto.Id.Value);
+                user.Name = dto.Name;
+                _dao.Update(user);  
             }
             else
             {
