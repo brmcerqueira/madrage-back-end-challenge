@@ -6,8 +6,6 @@ namespace MadrageBackEndChallenge.Domain
     {
         public int Id { get; set; }
         public string Label { get; set; }
-        public int ParentId { get; set; }
-        public Menu Parent { get; set; }
-        public IList<MenuUser> Users { get; set; }
+        public int? ParentId { get; set; }
     }
 }

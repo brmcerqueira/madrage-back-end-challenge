@@ -12,12 +12,6 @@ namespace MadrageBackEndChallenge.Persistence.Configurations
             builder.HasKey(x => new { x.UserId, x.MenuId });
             builder.Property(x => x.UserId).HasColumnName("user_id").IsRequired();
             builder.Property(x => x.MenuId).HasColumnName("menu_id").IsRequired();
-            builder.HasOne(x => x.User)
-                .WithMany(x => x.Menus)
-                .HasForeignKey(x => x.UserId);
-            builder.HasOne(x => x.Menu)
-                .WithMany(x => x.Users)
-                .HasForeignKey(x => x.UserId);
         }
     }
 }

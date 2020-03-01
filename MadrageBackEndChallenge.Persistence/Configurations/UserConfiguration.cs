@@ -14,7 +14,6 @@ namespace MadrageBackEndChallenge.Persistence.Configurations
             builder.Property(x => x.Name).HasColumnName("name").IsRequired().HasMaxLength(50);
             builder.Property(x => x.Email).HasColumnName("email").IsRequired().HasMaxLength(30);
             builder.Property(x => x.Password).HasColumnName("password").IsRequired().HasMaxLength(60);
-            builder.HasMany(x => x.Menus);
         }
     }
 }

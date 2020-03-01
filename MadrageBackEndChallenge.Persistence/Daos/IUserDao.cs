@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MadrageBackEndChallenge.Domain;
 
 namespace MadrageBackEndChallenge.Persistence.Daos
@@ -6,5 +7,6 @@ namespace MadrageBackEndChallenge.Persistence.Daos
     {
         User GetUserByEmail(string email);
         bool HasEmail(string email);
+        Menu[] GetMenuTreeByUserId(int id);
     }
 }

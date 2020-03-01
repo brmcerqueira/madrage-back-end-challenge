@@ -96,10 +96,6 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            },
             "LightInject": {
               "target": "Package",
               "version": "[6.3.0, )"

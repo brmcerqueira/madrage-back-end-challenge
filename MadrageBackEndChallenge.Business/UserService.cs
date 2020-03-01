@@ -75,7 +75,8 @@ namespace MadrageBackEndChallenge.Business
             return new
             {
                 user.Name,
-                user.Email
+                user.Email,
+                Menus = _dao.GetMenuTreeByUserId(id).BuildMenuTreeNode()
             };
         }
 
