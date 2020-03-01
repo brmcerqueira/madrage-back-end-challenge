@@ -20,7 +20,7 @@ namespace MadrageBackEndChallenge.Persistence.Daos
             return Context.Set<User>().Any(e => e.Email == email);
         }
 
-        public Menu[] GetMenuTreeByUserId(int id)
+        public Menu[] GetMenusByUserId(int id)
         {
             return (from mus in Context.Set<MenuUser>()
                 join men in Context.Set<Menu>() on mus.MenuId equals men.Id

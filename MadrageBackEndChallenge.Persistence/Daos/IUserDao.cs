@@ -7,6 +7,6 @@ namespace MadrageBackEndChallenge.Persistence.Daos
     {
         User GetUserByEmail(string email);
         bool HasEmail(string email);
-        Menu[] GetMenuTreeByUserId(int id);
+        Menu[] GetMenusByUserId(int id);
     }
 }

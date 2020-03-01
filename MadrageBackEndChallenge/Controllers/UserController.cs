@@ -6,43 +6,17 @@ namespace MadrageBackEndChallenge.Web.Controllers
 {
     [ApiController]
     [Route("/user")]
-    public class UserController : ControllerBase
+    public class UserController : CrudController<IUserService, UserSaveModel>
     {
-        private readonly IUserService _service;
-
-        public UserController(IUserService service)
+        public UserController(IUserService service) : base(service)
         {
-            _service = service;
+            
         }
         
         [HttpPost("signIn")]
         public string SignIn(SignInModel model)
         {
-            return _service.SignIn(model);
-        }
-        
-        [HttpGet]
-        public object[] All(int? index, int? limit)
-        {
-            return _service.All(index, limit);
-        }
-        
-        [HttpGet("{id}")]
-        public object Get(int id)
-        {
-            return _service.Get(id);
-        }
-        
-        [HttpPost]
-        public void Save(UserSaveModel model)
-        {
-            _service.Save(model);
-        }
-        
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            _service.Delete(id);
+            return Service.SignIn(model);
         }
     }
 }

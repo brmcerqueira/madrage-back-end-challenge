@@ -47,7 +47,7 @@ namespace MadrageBackEndChallenge.Business
                     result[menu.ParentId.Value] = new TreeNode<Menu>();
                 }
                     
-                result[menu.ParentId.Value].AddChild(menu);
+                result[menu.ParentId.Value].AddChild(result[menu.Id]);
             }
 
             return result.Values.Where(e => !e.Node.ParentId.HasValue).ToArray();

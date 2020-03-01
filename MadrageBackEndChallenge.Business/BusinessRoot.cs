@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Resources;
 using LightInject;
+using MadrageBackEndChallenge.Business.Dtos;
 
 namespace MadrageBackEndChallenge.Business
 {
@@ -9,6 +10,7 @@ namespace MadrageBackEndChallenge.Business
         {
             serviceRegistry.Register<ILanguageManager, ValidationLanguageManager>();
             serviceRegistry.Register<IUserService, UserService>();
+            serviceRegistry.Register<ICrudService<IMenuSaveDto>, MenuService>();
         }
     }
 }

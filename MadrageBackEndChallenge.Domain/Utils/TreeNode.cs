@@ -18,9 +18,9 @@ namespace MadrageBackEndChallenge.Domain.Utils
 
         public TreeNode<T>[] Children => _childNodes.ToArray();
         
-        public void AddChild(T node) 
+        public void AddChild(TreeNode<T> node) 
         {
-            _childNodes.Add(new TreeNode<T>(node));
+            _childNodes.Add(node);
         }
     }
 }

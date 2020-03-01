@@ -2,12 +2,8 @@ using MadrageBackEndChallenge.Business.Dtos;
 
 namespace MadrageBackEndChallenge.Business
 {
-    public interface IUserService
+    public interface IUserService : ICrudService<IUserSaveDto>
     {
         string SignIn(ISignInDto dto);
-        object[] All(int? index, int? limit);
-        object Get(int id);
-        void Save(IUserSaveDto dto);
-        void Delete(int id);
     }
 }

@@ -1,17 +1,17 @@
+using MadrageBackEndChallenge.Business;
+using MadrageBackEndChallenge.Business.Dtos;
+using MadrageBackEndChallenge.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace MadrageBackEndChallenge.Web.Controllers
 {
     [ApiController]
     [Route("/menu")]
-    public class MenuController : ControllerBase
+    public class MenuController :  CrudController<ICrudService<IMenuSaveDto>, MenuSaveModel>
     {
-        private readonly ILogger<MenuController> _logger;
-
-        public MenuController(ILogger<MenuController> logger)
+        public MenuController(ICrudService<IMenuSaveDto> service) : base(service)
         {
-            _logger = logger;
+
         }
     }
 }
