@@ -32,7 +32,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"user",
 						"signIn"
@@ -69,7 +69,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"user"
 					]
@@ -98,7 +98,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"user"
 					]
@@ -127,7 +127,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"user",
 						"4"
@@ -157,7 +157,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"user",
 						"1"
@@ -203,7 +203,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"menu"
 					]
@@ -232,7 +232,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"menu"
 					]
@@ -261,7 +261,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"menu",
 						"3"
@@ -291,7 +291,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"menu-user"
 					],
@@ -330,7 +330,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"menu-user"
 					],
@@ -369,7 +369,7 @@
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8081",
 					"path": [
 						"menu",
 						"8"
