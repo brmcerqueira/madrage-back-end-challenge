@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "b4f273e8-3d74-4837-ac90-80183c0bce17",
+		"name": "madrage-back-end-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"brmcerqueira@gmail.com\",\n\t\"password\": \"testeteste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/signIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"signIn"
+					]
+				},
+				"description": "SignIn"
+			},
+			"response": []
+		},
+		{
+			"name": "Save User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Bruno Cerqueira\",\n\t\"email\": \"brmcerqueira@gmail.com\",\n\t\"password\": \"testeteste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Menu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"label\": \"Menu 7\",\n\t\"parentId\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/menu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Menus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/menu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Menu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/menu/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"menu",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grant Menu -> User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/menu-user?menuId=8&userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"menu-user"
+					],
+					"query": [
+						{
+							"key": "menuId",
+							"value": "8"
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Menu -> User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/menu-user?menuId=5&userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"menu-user"
+					],
+					"query": [
+						{
+							"key": "menuId",
+							"value": "5"
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Menu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkJydW5vIENlcnF1ZWlyYSIsInN1YiI6IjIiLCJlbWFpbCI6ImJybWNlcnF1ZWlyYUBnbWFpbC5jb20iLCJuYmYiOjE1ODMwOTU5NjMsImV4cCI6MTU4MzM1NTE2MywiaWF0IjoxNTgzMDk1OTY0LCJpc3MiOiJNYWRyYWdlQmFja0VuZENoYWxsZW5nZUlzc3VlciIsImF1ZCI6Ik1hZHJhZ2VCYWNrRW5kQ2hhbGxlbmdlQXVkaWVuY2UifQ.95BMHfhfEg4vF6buJxOSGrRz-WF0IT-cAFj0SGPEQNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/menu/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"menu",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
