@@ -214,6 +214,12 @@ namespace MadrageBackEndChallenge.Web.Resources {
             }
         }
         
+        public static string ParentNotFoundException {
+            get {
+                return ResourceManager.GetString("ParentNotFoundException", resourceCulture);
+            }
+        }
+        
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);

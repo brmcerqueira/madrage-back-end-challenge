@@ -25,32 +25,42 @@ namespace MadrageBackEndChallenge.Business
             }
         }
 
-        internal static TreeNode<Menu>[] BuildMenuTreeNode(this Menu[] menus)
+        internal static MenuTreeNode[] BuildMenuTreeNode(this IEnumerable<Menu> menus)
         {
-            var result = new Dictionary<int, TreeNode<Menu>>();
+            var result = new Dictionary<int, MenuTreeNode>();
 
             foreach (var menu in menus)
             {
                 if (result.ContainsKey(menu.Id))
                 {
-                    result[menu.Id].Node = menu;
+                    result[menu.Id].Parse(menu);
                 }
                 else
                 {
-                    result[menu.Id] = new TreeNode<Menu>(menu);
+                    result[menu.Id] = new MenuTreeNode(menu)
+                    {
+                        IsRoot = true
+                    };
                 }
 
                 if (!menu.ParentId.HasValue) continue;
                 
-                if (!result.ContainsKey(menu.ParentId.Value))
+                if (result.ContainsKey(menu.ParentId.Value))
                 {
-                    result[menu.ParentId.Value] = new TreeNode<Menu>();
+                    result[menu.Id].IsRoot = false;
+                }
+                else
+                {
+                    result[menu.ParentId.Value] = new MenuTreeNode()
+                    {
+                        IsRoot = true
+                    };
                 }
                     
                 result[menu.ParentId.Value].AddChild(result[menu.Id]);
             }
 
-            return result.Values.Where(e => !e.Node.ParentId.HasValue).ToArray();
+            return result.Values.Where(e => e.IsRoot && e.Id > 0).ToArray();
         }
     }
 }

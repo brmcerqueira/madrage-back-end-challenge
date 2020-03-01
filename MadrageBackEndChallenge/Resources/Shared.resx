@@ -102,6 +102,9 @@
   <data name="EntityNotFoundException" xml:space="preserve">
     <value>Item não encontrado.</value>
   </data>
+  <data name="ParentNotFoundException" xml:space="preserve">
+    <value>O menu referenciado no 'ParentId' não existe.</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
   </data>

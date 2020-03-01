@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
 using MadrageBackEndChallenge.Business.Dtos;
 using MadrageBackEndChallenge.Business.Validators;
 using MadrageBackEndChallenge.Domain;
+using MadrageBackEndChallenge.Domain.Exceptions;
 using MadrageBackEndChallenge.Persistence.Daos;
 
 namespace MadrageBackEndChallenge.Business
@@ -28,18 +30,24 @@ namespace MadrageBackEndChallenge.Business
         }
         public object Get(int id)
         {
-            var menu = _dao.Get(id);
-            return new
+            var result = new List<Menu>
             {
-                menu.Label,
-                menu.ParentId,
-                Submenus = _dao.GetSubmenus(id).BuildMenuTreeNode()
+                _dao.Get(id)
             };
+            
+            result.AddRange(_dao.GetSubmenus(id));
+
+            return result.BuildMenuTreeNode().FirstOrDefault();
         }
 
         public void Save(IMenuSaveDto dto)
         {
             _menuSaveDtoValidator.Check(dto);
+            
+            if (dto.ParentId.HasValue && !_dao.HasParent(dto.ParentId.Value))
+            {
+                throw new ParentNotFoundException();
+            }
             
             if (dto.Id != null)
             {
