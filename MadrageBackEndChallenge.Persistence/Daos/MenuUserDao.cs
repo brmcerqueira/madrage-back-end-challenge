@@ -28,6 +28,21 @@ namespace MadrageBackEndChallenge.Persistence.Daos
             return _context.Set<MenuUser>().Any(e => e.MenuId == menuId && e.UserId == userId);
         }
 
+        private void GrantRecursively(int menuId, int userId)
+        {
+            var menu = _context.Set<Menu>().SingleOrDefault(e => e.Id == menuId);
+
+            if (menu?.ParentId == null || HasGrant(menu.ParentId.Value, userId)) return;
+            
+            _context.Add(new MenuUser
+            {
+                MenuId = menu.ParentId.Value,
+                UserId = userId
+            });
+                
+            GrantRecursively(menu.ParentId.Value, userId);
+        }
+        
         public void Grant(int menuId, int userId)
         {
             _context.Add(new MenuUser
@@ -35,7 +50,22 @@ namespace MadrageBackEndChallenge.Persistence.Daos
                 MenuId = menuId,
                 UserId = userId
             });
+
+            GrantRecursively(menuId, userId);
+            
             _context.SaveChanges();
+        }
+
+        private void DeleteRecursively(int menuId, int userId)
+        {
+            foreach (var menuUser in (from mus in _context.Set<MenuUser>()
+                join men in _context.Set<Menu>() on mus.MenuId equals men.Id
+                where mus.UserId == userId && men.ParentId.HasValue &&men.ParentId.Value == menuId
+                select mus).ToArray())
+            {
+                _context.Remove(menuUser);
+                DeleteRecursively(menuUser.MenuId, userId);
+            }
         }
 
         public void Delete(int menuId, int userId)
@@ -48,6 +78,9 @@ namespace MadrageBackEndChallenge.Persistence.Daos
             }
             
             _context.Remove(entity);
+
+            DeleteRecursively(menuId, userId);
+            
             _context.SaveChanges();
         }
     }
