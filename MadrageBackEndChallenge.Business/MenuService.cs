@@ -1,5 +1,7 @@
 using System.Linq;
 using MadrageBackEndChallenge.Business.Dtos;
+using MadrageBackEndChallenge.Business.Validators;
+using MadrageBackEndChallenge.Domain;
 using MadrageBackEndChallenge.Persistence.Daos;
 
 namespace MadrageBackEndChallenge.Business
@@ -7,10 +9,12 @@ namespace MadrageBackEndChallenge.Business
     public class MenuService : ICrudService<IMenuSaveDto>
     {
         private readonly IMenuDao _dao;
+        private readonly MenuSaveDtoValidator _menuSaveDtoValidator;
 
         public MenuService(IMenuDao dao)
         {
             _dao = dao;
+            _menuSaveDtoValidator = new MenuSaveDtoValidator();
         }
         public object[] All(int? index, int? limit)
         {
@@ -35,7 +39,23 @@ namespace MadrageBackEndChallenge.Business
 
         public void Save(IMenuSaveDto dto)
         {
-            throw new System.NotImplementedException();
+            _menuSaveDtoValidator.Check(dto);
+            
+            if (dto.Id != null)
+            {
+                var menu = _dao.Get(dto.Id.Value);
+                menu.Label = dto.Label;
+                menu.ParentId = dto.ParentId;
+                _dao.Update(menu);  
+            }
+            else
+            {
+                _dao.Create(new Menu
+                {
+                    Label = dto.Label,
+                    ParentId = dto.ParentId
+                });  
+            }
         }
 
         public void Delete(int id)
