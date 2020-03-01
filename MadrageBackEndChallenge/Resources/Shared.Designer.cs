@@ -52,6 +52,12 @@ namespace MadrageBackEndChallenge.Web.Resources {
             }
         }
         
+        public static string GrantAlreadyExistsException {
+            get {
+                return ResourceManager.GetString("GrantAlreadyExistsException", resourceCulture);
+            }
+        }
+        
         public static string MaximumLengthValidator {
             get {
                 return ResourceManager.GetString("MaximumLengthValidator", resourceCulture);
@@ -214,6 +220,18 @@ namespace MadrageBackEndChallenge.Web.Resources {
             }
         }
         
+        public static string MenuNotFoundException {
+            get {
+                return ResourceManager.GetString("MenuNotFoundException", resourceCulture);
+            }
+        }
+        
+        public static string UserNotFoundException {
+            get {
+                return ResourceManager.GetString("UserNotFoundException", resourceCulture);
+            }
+        }
+        
         public static string ParentNotFoundException {
             get {
                 return ResourceManager.GetString("ParentNotFoundException", resourceCulture);
@@ -223,6 +241,42 @@ namespace MadrageBackEndChallenge.Web.Resources {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        public static string Label {
+            get {
+                return ResourceManager.GetString("Label", resourceCulture);
+            }
+        }
+        
+        public static string ParentId {
+            get {
+                return ResourceManager.GetString("ParentId", resourceCulture);
+            }
+        }
+        
+        public static string Id {
+            get {
+                return ResourceManager.GetString("Id", resourceCulture);
+            }
+        }
+        
+        public static string UserId {
+            get {
+                return ResourceManager.GetString("UserId", resourceCulture);
+            }
+        }
+        
+        public static string MenuId {
+            get {
+                return ResourceManager.GetString("MenuId", resourceCulture);
             }
         }
         

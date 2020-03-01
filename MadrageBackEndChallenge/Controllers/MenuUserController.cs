@@ -1,5 +1,5 @@
+using MadrageBackEndChallenge.Business;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace MadrageBackEndChallenge.Web.Controllers
 {
@@ -7,11 +7,23 @@ namespace MadrageBackEndChallenge.Web.Controllers
     [Route("/menu-user")]
     public class MenuUserController : ControllerBase
     {
-        private readonly ILogger<MenuUserController> _logger;
+        private readonly IMenuUserService _service;
 
-        public MenuUserController(ILogger<MenuUserController> logger)
+        public MenuUserController(IMenuUserService service)
         {
-            _logger = logger;
+            _service = service;
+        }
+        
+        [HttpPost]
+        public void Grant(int menuId, int userId)
+        {
+            _service.Grant(menuId, userId);
+        }
+        
+        [HttpDelete]
+        public void Delete(int menuId, int userId)
+        {
+            _service.Delete(menuId, userId);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace MadrageBackEndChallenge.Business
             serviceRegistry.Register<ILanguageManager, ValidationLanguageManager>();
             serviceRegistry.Register<IUserService, UserService>();
             serviceRegistry.Register<ICrudService<IMenuSaveDto>, MenuService>();
+            serviceRegistry.Register<IMenuUserService, MenuUserService>();
         }
     }
 }

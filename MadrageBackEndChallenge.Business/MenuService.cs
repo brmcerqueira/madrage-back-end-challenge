@@ -8,7 +8,7 @@ using MadrageBackEndChallenge.Persistence.Daos;
 
 namespace MadrageBackEndChallenge.Business
 {
-    public class MenuService : ICrudService<IMenuSaveDto>
+    internal class MenuService : ICrudService<IMenuSaveDto>
     {
         private readonly IMenuDao _dao;
         private readonly MenuSaveDtoValidator _menuSaveDtoValidator;

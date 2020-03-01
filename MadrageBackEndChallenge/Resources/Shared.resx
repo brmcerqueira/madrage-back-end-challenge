@@ -20,13 +20,16 @@
   </resheader>
   <data name="EmailAlreadyExistsException" xml:space="preserve">
       <value>E-mail já existe cadastrado.</value>
-    </data>
+  </data>
+  <data name="GrantAlreadyExistsException" xml:space="preserve">
+      <value>O menu já foi concedido a este usuário.</value>
+  </data>
   <data name="MaximumLengthValidator" xml:space="preserve">
       <value>'{PropertyName}' deve ser menor ou igual a {MaxLength} caracteres. Você digitou {TotalLength} caracteres.</value>
-    </data>
+  </data>
   <data name="MinimumLengthValidator" xml:space="preserve">
       <value>'{PropertyName}' deve ser maior ou igual a {MinLength} caracteres. Você digitou {TotalLength} caracteres.</value>
-    </data>
+  </data>
   <data name="AsyncPredicateValidator" xml:space="preserve">
     <value>'{PropertyName}' não atende a condição definida.</value>
   </data>
@@ -102,11 +105,35 @@
   <data name="EntityNotFoundException" xml:space="preserve">
     <value>Item não encontrado.</value>
   </data>
+  <data name="MenuNotFoundException" xml:space="preserve">
+    <value>Menu não encontrado.</value>
+  </data>
+  <data name="UserNotFoundException" xml:space="preserve">
+    <value>Usuário não encontrado.</value>
+  </data>
   <data name="ParentNotFoundException" xml:space="preserve">
-    <value>O menu referenciado no 'ParentId' não existe.</value>
+    <value>O 'Código do Menu Pai' não existe.</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Rótulo</value>
+  </data>
+  <data name="ParentId" xml:space="preserve">
+    <value>Código do Menu Pai</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>Código do Usuário</value>
+  </data>
+  <data name="MenuId" xml:space="preserve">
+    <value>Código do Menu</value>
   </data>
   <data name="SystemUnavailable" xml:space="preserve">
     <value>Sistema indisponível, tente novamente mais tarde.</value>

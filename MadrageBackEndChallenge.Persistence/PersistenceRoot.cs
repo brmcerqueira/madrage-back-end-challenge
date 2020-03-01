@@ -9,6 +9,7 @@ namespace MadrageBackEndChallenge.Persistence
         {
             serviceRegistry.Register<IUserDao, UserDao>();
             serviceRegistry.Register<IMenuDao, MenuDao>();
+            serviceRegistry.Register<IMenuUserDao, MenuUserDao>();
         }
     }
 }
