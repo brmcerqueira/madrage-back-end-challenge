@@ -3,8 +3,8 @@ using System.Linq;
 using FluentValidation;
 using FluentValidation.Resources;
 using LightInject;
+using MadrageBackEndChallenge.Business.Dtos;
 using MadrageBackEndChallenge.Domain;
-using MadrageBackEndChallenge.Domain.Utils;
 
 namespace MadrageBackEndChallenge.Business
 {
@@ -25,9 +25,9 @@ namespace MadrageBackEndChallenge.Business
             }
         }
 
-        internal static MenuTreeNode[] BuildMenuTreeNode(this IEnumerable<Menu> menus)
+        internal static MenuTreeNodeOutputDto[] BuildMenuTreeNode(this IEnumerable<Menu> menus)
         {
-            var result = new Dictionary<int, MenuTreeNode>();
+            var result = new Dictionary<int, MenuTreeNodeOutputDto>();
 
             foreach (var menu in menus)
             {
@@ -37,7 +37,7 @@ namespace MadrageBackEndChallenge.Business
                 }
                 else
                 {
-                    result[menu.Id] = new MenuTreeNode(menu)
+                    result[menu.Id] = new MenuTreeNodeOutputDto(menu)
                     {
                         IsRoot = true
                     };
@@ -51,7 +51,7 @@ namespace MadrageBackEndChallenge.Business
                 }
                 else
                 {
-                    result[menu.ParentId.Value] = new MenuTreeNode()
+                    result[menu.ParentId.Value] = new MenuTreeNodeOutputDto()
                     {
                         IsRoot = true
                     };

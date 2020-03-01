@@ -1,21 +1,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
+using MadrageBackEndChallenge.Domain;
 
-namespace MadrageBackEndChallenge.Domain.Utils
+namespace MadrageBackEndChallenge.Business.Dtos
 {
-    public class MenuTreeNode
+    public class MenuTreeNodeOutputDto
     {
-        private readonly IList<MenuTreeNode> _childNodes;
+        private readonly IList<MenuTreeNodeOutputDto> _childNodes;
 
-        public MenuTreeNode(Menu menu = null)
+        public MenuTreeNodeOutputDto(Menu menu = null)
         {
             if (menu != null)
             {
                 Parse(menu);
             }
             IsRoot = false;
-            _childNodes = new List<MenuTreeNode>();
+            _childNodes = new List<MenuTreeNodeOutputDto>();
         }
 
         public int Id { get; private set; }
@@ -25,7 +26,7 @@ namespace MadrageBackEndChallenge.Domain.Utils
         [JsonIgnore]
         public bool IsRoot { get; set; }
         
-        public MenuTreeNode[] Children => _childNodes.ToArray();
+        public MenuTreeNodeOutputDto[] Children => _childNodes.ToArray();
 
         public void Parse(Menu menu)
         {
@@ -33,9 +34,9 @@ namespace MadrageBackEndChallenge.Domain.Utils
             Label = menu.Label;
         }
         
-        public void AddChild(MenuTreeNode node) 
+        public void AddChild(MenuTreeNodeOutputDto nodeOutputDto) 
         {
-            _childNodes.Add(node);
+            _childNodes.Add(nodeOutputDto);
         }
     }
 }
