@@ -10,18 +10,23 @@ namespace MadrageBackEndChallenge.Web
 {
     public class ErrorHandlingMiddleware
     {
-        private readonly RequestDelegate next;
+        private readonly RequestDelegate _next;
+        private readonly JsonSerializerOptions _serializerOptions;
 
         public ErrorHandlingMiddleware(RequestDelegate next)
         {
-            this.next = next;
+            _next = next;
+            _serializerOptions = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
         }
 
         public async Task Invoke(HttpContext context, IStringLocalizer stringLocalizer)
         {
             try
             {
-                await next(context);
+                await _next(context);
             }
             catch (Exception exception)
             {
@@ -55,7 +60,7 @@ namespace MadrageBackEndChallenge.Web
 
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
-                await context.Response.WriteAsync(JsonSerializer.Serialize(result));
+                await context.Response.WriteAsync(JsonSerializer.Serialize(result, _serializerOptions));
             }
         }
     }

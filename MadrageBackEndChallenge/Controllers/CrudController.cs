@@ -1,4 +1,5 @@
 using MadrageBackEndChallenge.Business;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MadrageBackEndChallenge.Web.Controllers
@@ -13,12 +14,14 @@ namespace MadrageBackEndChallenge.Web.Controllers
             Service = service;
         }
         
+        [Authorize("Bearer")]
         [HttpGet]
         public object[] All(int? index, int? limit)
         {
             return Service.All(index, limit);
         }
         
+        [Authorize("Bearer")]
         [HttpGet("{id}")]
         public object Get(int id)
         {
@@ -26,11 +29,12 @@ namespace MadrageBackEndChallenge.Web.Controllers
         }
         
         [HttpPost]
-        public void Save(TSaveModel model)
+        public virtual void Save(TSaveModel model)
         {
             Service.Save(model);
         }
         
+        [Authorize("Bearer")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

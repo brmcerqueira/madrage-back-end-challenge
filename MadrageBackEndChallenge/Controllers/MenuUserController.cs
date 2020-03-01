@@ -1,4 +1,5 @@
 using MadrageBackEndChallenge.Business;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MadrageBackEndChallenge.Web.Controllers
@@ -14,12 +15,14 @@ namespace MadrageBackEndChallenge.Web.Controllers
             _service = service;
         }
         
+        [Authorize("Bearer")]
         [HttpPost]
         public void Grant(int menuId, int userId)
         {
             _service.Grant(menuId, userId);
         }
         
+        [Authorize("Bearer")]
         [HttpDelete]
         public void Delete(int menuId, int userId)
         {
