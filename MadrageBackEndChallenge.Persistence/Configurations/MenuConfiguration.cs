@@ -8,8 +8,11 @@ namespace MadrageBackEndChallenge.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Menu> builder)
         {
+            builder.ToTable("menus");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Label).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Id).HasColumnName("id").IsRequired();
+            builder.Property(x => x.Label).HasColumnName("label").IsRequired().HasMaxLength(30);
+            builder.Property(x => x.ParentId).HasColumnName("parent_id").IsRequired();
             builder.HasOne(x => x.Parent);
         }
     }

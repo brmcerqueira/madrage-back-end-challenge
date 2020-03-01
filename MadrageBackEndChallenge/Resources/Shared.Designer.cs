@@ -208,9 +208,9 @@ namespace MadrageBackEndChallenge.Web.Resources {
             }
         }
         
-        public static string DeleteException {
+        public static string EntityNotFoundException {
             get {
-                return ResourceManager.GetString("DeleteException", resourceCulture);
+                return ResourceManager.GetString("EntityNotFoundException", resourceCulture);
             }
         }
         

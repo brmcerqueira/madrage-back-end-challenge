@@ -27,6 +27,12 @@ namespace MadrageBackEndChallenge.Web.Controllers
             return _service.All(index, limit);
         }
         
+        [HttpGet("{id}")]
+        public object Get(int id)
+        {
+            return _service.Get(id);
+        }
+        
         [HttpPost]
         public void Save(UserSaveModel model)
         {

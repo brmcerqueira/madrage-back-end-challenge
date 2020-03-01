@@ -69,7 +69,16 @@ namespace MadrageBackEndChallenge.Business
                 e.Email
             }).ToArray();
         }
-        
+        public object Get(int id)
+        {
+            var user = _dao.Get(id);
+            return new
+            {
+                user.Name,
+                user.Email
+            };
+        }
+
         public void Save(IUserSaveDto dto)
         {
             _userSaveDtoValidator.Check(dto);

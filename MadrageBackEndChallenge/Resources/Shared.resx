@@ -99,7 +99,7 @@
   <data name="AuthenticationException" xml:space="preserve">
     <value>E-mail ou senha inválida.</value>
   </data>
-  <data name="DeleteException" xml:space="preserve">
+  <data name="EntityNotFoundException" xml:space="preserve">
     <value>Item não encontrado.</value>
   </data>
   <data name="Email" xml:space="preserve">

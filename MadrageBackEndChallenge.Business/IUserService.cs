@@ -6,6 +6,7 @@ namespace MadrageBackEndChallenge.Business
     {
         string SignIn(ISignInDto dto);
         object[] All(int? index, int? limit);
+        object Get(int id);
         void Save(IUserSaveDto dto);
         void Delete(int id);
     }

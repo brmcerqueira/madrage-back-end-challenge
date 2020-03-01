@@ -33,7 +33,14 @@ namespace MadrageBackEndChallenge.Persistence.Daos
 
         public T Get(int id)
         {
-            return Context.Set<T>().SingleOrDefault(e => e.Id == id);
+            var entity = Context.Set<T>().SingleOrDefault(e => e.Id == id);
+            
+            if (entity == null) 
+            {
+                throw new EntityNotFoundException();
+            }
+
+            return entity;
         }
 
         public void Create(T entity)
@@ -50,12 +57,7 @@ namespace MadrageBackEndChallenge.Persistence.Daos
 
         public void Delete(int id)
         {
-            var entity = Get(id);
-            if (entity == null) 
-            {
-                throw new DeleteException();
-            }
-            Context.Remove(entity);
+            Context.Remove(Get(id));
             Context.SaveChanges();
         }
     }

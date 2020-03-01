@@ -14,7 +14,8 @@ namespace MadrageBackEndChallenge.Persistence
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new MenuConfiguration());
-
+            modelBuilder.ApplyConfiguration(new MenuUserConfiguration());
+            
             base.OnModelCreating(modelBuilder);
         }
     }
